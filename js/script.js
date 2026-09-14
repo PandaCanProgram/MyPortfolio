@@ -51,11 +51,6 @@ contactForm.addEventListener('submit', async (e) => {
   }
 });
 
-// Back to top
-document.getElementById('backToTop').addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
 // Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -73,7 +68,7 @@ let lastFocused = null;
 
 function openExpModal(card) {
   const thumb = card.querySelector('.bento-media img');
-  modalImg.src = thumb ? thumb.currentSrc || thumb.src : card.dataset.expImg;
+  modalImg.src = thumb.currentSrc || thumb.src;
   modalImg.alt = card.dataset.expTitle;
   modalPeriod.textContent = card.dataset.expPeriod;
   modalTitle.textContent = card.dataset.expTitle;
