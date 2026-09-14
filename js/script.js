@@ -72,7 +72,8 @@ const modalClose = document.getElementById('modalClose');
 let lastFocused = null;
 
 function openExpModal(card) {
-  modalImg.src = card.dataset.expImg;
+  const thumb = card.querySelector('.bento-media img');
+  modalImg.src = thumb ? thumb.currentSrc || thumb.src : card.dataset.expImg;
   modalImg.alt = card.dataset.expTitle;
   modalPeriod.textContent = card.dataset.expPeriod;
   modalTitle.textContent = card.dataset.expTitle;
